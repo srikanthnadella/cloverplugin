@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="org.devgirl.calendar"
+      version="0.1.0">
+    <name>CloverPlugin</name>
+    <description>PhoneGap Clover Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,clover</keywords>
+	<!--<asset src="www/cloverplugin.js" target="js/cloverplugin.js" />-->
+
+    <js-module src="www/cloverplugin.js" name="CloverPlugin">
+        <clobbers target="window.cloverplugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CloverPlugin">
+                <param name="android-package" value="com.termtegrity.spotskim.cloverplugin.CloverPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/CloverPlugin.java" target-dir="src/com/termtegrity/spotskim/cloverplugin" />
+     </platform>          
+</plugin>
